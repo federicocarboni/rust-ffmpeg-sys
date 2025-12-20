@@ -1542,9 +1542,7 @@ fn main() {
         .blocklist_function("y1l")
         .blocklist_function("ynl")
         .opaque_type("__mingw_ldbl_type_t")
-        .default_enum_style(bindgen::EnumVariation::Rust {
-            non_exhaustive: env::var("CARGO_FEATURE_NON_EXHAUSTIVE_ENUMS").is_ok(),
-        })
+        .default_enum_style(bindgen::EnumVariation::Consts)
         .prepend_enum_name(false)
         .derive_eq(true)
         .size_t_is_usize(true)
